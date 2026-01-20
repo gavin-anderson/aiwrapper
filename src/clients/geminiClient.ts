@@ -1,17 +1,12 @@
-import { GoogleGenerativeAI, GenerativeModel } from "@google/generative-ai";
+import { GoogleGenAI } from "@google/genai";
 
-let modelSingleton: GenerativeModel | null = null;
+let clientSingleton: GoogleGenAI | null = null;
 
-export function getGeminiModel(): GenerativeModel {
-    if (modelSingleton) return modelSingleton;
+export function getGeminiClient(): GoogleGenAI {
+    if (clientSingleton) return clientSingleton;
 
-    const apiKey = process.env.GEMINI_API_KEY;
-    if (!apiKey) throw new Error("Missing GEMINI_API_KEY in env");
+    // API key is automatically read from GEMINI_API_KEY
+    clientSingleton = new GoogleGenAI({});
 
-    const genAI = new GoogleGenerativeAI(apiKey);
-
-    // Fast/cheap for SMS-style responses
-    modelSingleton = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-
-    return modelSingleton;
+    return clientSingleton;
 }

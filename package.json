@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "test:reply": "tsx src/scripts/testModelReply.ts",
     "dev": "tsx watch src/app.ts",
     "build": "rm -rf dist && tsc",
     "start": "node dist/app.js",
@@ -14,7 +15,7 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "@google/generative-ai": "^0.24.1",
+    "@google/genai": "^1.37.0",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "twilio": "^5.11.2"
