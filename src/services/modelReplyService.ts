@@ -1,4 +1,4 @@
-import { getGeminiModel } from "../clients/geminiClient";
+import { getGeminiModel } from "../clients/geminiClient.js";
 
 export async function modelReplyService(
   userText: string,

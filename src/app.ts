@@ -1,6 +1,6 @@
 import express from 'express';
 import dotenv from "dotenv";
-import messageRoute from "./routes/messageRoute";
+import messageRoute from "./routes/messageRoute.js";
 
 dotenv.config();
 

@@ -1,7 +1,7 @@
 import { Router } from "express";
 import twilio from "twilio";
-import { modelReplyService } from "../services/modelReplyService";
-import { validateTwilio } from "../middleware/validateTwilio";
+import { modelReplyService } from "../services/modelReplyService.js";
+import { validateTwilio } from "../middleware/validateTwilio.js";
 
 const router = Router();
 
